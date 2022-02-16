@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class MovieController {
 
 
-
     //Controller methods
     @GetMapping("/")
     public String index(){
