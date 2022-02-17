@@ -10,16 +10,27 @@ public class Movie implements Comparable<Movie>{
     private String title;
     private String subject;
     private int popularity;
-    private boolean isAwardWinner;
+    private String awards;
 
 
-    public Movie(int year, int length, String title, String subject, int popularity,String isAwardWinner) {
+    public Movie(int year, int length, String title, String subject, int popularity,String awards) {
         this.year = year;
         this.length = length;
         this.title = title;
         this.subject = subject;
         this.popularity = popularity;
-        this.isAwardWinner = isAwardWinner.toLowerCase().equals("yes");
+        this.awards = awards;
+    }
+
+    public static Movie createMovie(String[] info){
+        int year = Integer.parseInt(info[0]);
+        int length = Integer.parseInt(info[1]);
+        String title = info[2];
+        String subject = info[3];
+        int popularity = Integer.parseInt(info[4]);
+        String awards = info[5];
+
+        return new Movie(year,length,title,subject,popularity,awards);
     }
 
     public int getYear() {
@@ -62,9 +73,7 @@ public class Movie implements Comparable<Movie>{
         this.popularity = popularity;
     }
 
-    public boolean isAwardWinner() {
-        return isAwardWinner;
-    }
+
 
     @Override
     public int compareTo(Movie o) {
@@ -75,4 +84,6 @@ public class Movie implements Comparable<Movie>{
         }else
         return 0;
     }
+
+
 }

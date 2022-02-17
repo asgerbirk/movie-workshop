@@ -15,7 +15,7 @@ public class MovieController {
     //Controller methods
     @GetMapping("/")
     public String index(){
-        return "index";
+        return "index?";
     }
 
     @GetMapping("/getFirst")
@@ -32,9 +32,12 @@ return MovieService.getRandom();
     public String getTenSortByPopularity(){
         return MovieService.getTenSortByPopularity();
     }
+/*
     @GetMapping("/howManyWonAnAward")
     public String howManyWonAnAward(){
         return MovieService.howManyWonAnAward();
     }
+    /*
+ */
     }
 

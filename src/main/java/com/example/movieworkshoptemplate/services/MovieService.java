@@ -9,9 +9,11 @@ import java.util.*;
 
 public class MovieService {
     //Services called from controllers that returns what the client requests
+
+
 public static String getFistMovie(){
     ArrayList<Movie> allMovies = MovieDataRepository.movieList();
-    String firstMovieTitle = allMovies.get(0).getTitle();
+    String firstMovieTitle = allMovies.get(1).getTitle();
     return firstMovieTitle;
 }
 
@@ -47,7 +49,7 @@ ArrayList<Movie> allMovies = MovieDataRepository.movieList();
 //return mostPopularMovies;
     return null;
  }
-
+/*
  public static String howManyWonAnAward(){
 ArrayList<Movie> allMovies = MovieDataRepository.movieList();
 
@@ -59,4 +61,6 @@ if (awardWinningMovie.isAwardWinner()){
      }
 return "<h1> antallet af film med pris </h2>" + awardWinner;
  }
+ /*
+ */
 }
