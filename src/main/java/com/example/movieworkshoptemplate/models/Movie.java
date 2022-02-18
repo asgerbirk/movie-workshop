@@ -10,68 +10,37 @@ public class Movie implements Comparable<Movie>{
     private String title;
     private String subject;
     private int popularity;
-    private String awards;
+    private boolean isAwardWinning;
 
-
-    public Movie(int year, int length, String title, String subject, int popularity,String awards) {
+    public Movie(int year, int length, String title, String subject, int popularity, String isAwardWinning) {
         this.year = year;
         this.length = length;
         this.title = title;
         this.subject = subject;
         this.popularity = popularity;
-        this.awards = awards;
+        this.isAwardWinning = isAwardWinning.equals("yes");
     }
 
-    public static Movie createMovie(String[] info){
-        int year = Integer.parseInt(info[0]);
-        int length = Integer.parseInt(info[1]);
-        String title = info[2];
-        String subject = info[3];
-        int popularity = Integer.parseInt(info[4]);
-        String awards = info[5];
 
-        return new Movie(year,length,title,subject,popularity,awards);
+    public boolean isAwardWinning() {
+        return isAwardWinning;
     }
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
+    public void setAwardWinning(boolean awardWinning) {
+        isAwardWinning = awardWinning;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
 
     public int getPopularity() {
         return popularity;
     }
 
-    public void setPopularity(int popularity) {
-        this.popularity = popularity;
-    }
+
 
 
 

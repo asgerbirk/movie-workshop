@@ -11,6 +11,7 @@ public class MovieService {
     //Services called from controllers that returns what the client requests
 
 
+
 public static String getFistMovie(){
     ArrayList<Movie> allMovies = MovieDataRepository.movieList();
     String firstMovieTitle = allMovies.get(1).getTitle();
@@ -42,25 +43,28 @@ ArrayList<Movie> allMovies = MovieDataRepository.movieList();
     }
  Collections.sort(mostPopularMovies);
 
-//    for (int i = 0; i < mostPopularMovies.size(); i++) {
- //
-   //
-    //}
-//return mostPopularMovies;
-    return null;
+String returnList =  "<h1> ten movies sort</h1>";
+    for ( Movie currentMovie: mostPopularMovies ) {
+
+returnList +=  "<b> title <b>" + currentMovie.getTitle()+"<br>";
+returnList += "<b> popularity<b>"+currentMovie.getPopularity()+"<br>";
+
+
+    }
+    return returnList;
  }
-/*
+
+
  public static String howManyWonAnAward(){
 ArrayList<Movie> allMovies = MovieDataRepository.movieList();
 
 int awardWinner = 0;
      for ( Movie awardWinningMovie:allMovies ) {
-if (awardWinningMovie.isAwardWinner()){
+if (awardWinningMovie.isAwardWinning()){
     awardWinner++;
 }
      }
-return "<h1> antallet af film med pris </h2>" + awardWinner;
+return "<h1> antallet af film med pris </h2>" + allMovies.size() + awardWinner;
  }
- /*
- */
+
 }

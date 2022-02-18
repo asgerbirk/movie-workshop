@@ -11,7 +11,6 @@ import java.util.ArrayList;
 @RestController
 public class MovieController {
 
-
     //Controller methods
     @GetMapping("/")
     public String index(){
@@ -32,12 +31,11 @@ return MovieService.getRandom();
     public String getTenSortByPopularity(){
         return MovieService.getTenSortByPopularity();
     }
-/*
+
     @GetMapping("/howManyWonAnAward")
     public String howManyWonAnAward(){
         return MovieService.howManyWonAnAward();
     }
-    /*
- */
+
     }
 
